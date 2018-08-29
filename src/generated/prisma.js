@@ -1,7 +1,11 @@
-# source: https://eu1.prisma.sh/nikolas-burk/hackernews-node-pc/dev
-# timestamp: Wed Aug 29 2018 14:23:25 GMT+0200 (CEST)
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var prisma_lib_1 = require("prisma-lib");
+/**
+ * Type Defs
+ */
 
-type AggregateLink {
+const typeDefs = `type AggregateLink {
   count: Int!
 }
 
@@ -350,7 +354,7 @@ input LinkWhereUniqueInput {
 }
 
 """
-The `Long` scalar type represents non-fractional signed whole numeric values.
+The \`Long\` scalar type represents non-fractional signed whole numeric values.
 Long can represent values between -(2^63) and 2^63 - 1.
 """
 scalar Long
@@ -988,3 +992,7 @@ input VoteWhereInput {
 input VoteWhereUniqueInput {
   id: ID
 }
+`
+
+exports.Prisma = prisma_lib_1.makePrismaBindingClass({typeDefs, endpoint: 'https://eu1.prisma.sh/nikolas-burk/hackernews-node-pc/dev'});
+exports.prisma = new exports.Prisma();
